@@ -20,7 +20,7 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private String role;
+    private String role; // USER(고객), SELLER(판매자), ADMIN(관리자)
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

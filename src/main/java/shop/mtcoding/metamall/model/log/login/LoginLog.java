@@ -21,6 +21,18 @@ public class LoginLog {
     private String userAgent;
     private String clientIP;
     private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
+    @PrePersist
+    protected void onCreate() {
+        this.createdAt = LocalDateTime.now();
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = LocalDateTime.now();
+    }
+
 
     @Builder
     public LoginLog(Long id, Long userId, String userAgent, String clientIP, LocalDateTime createdAt) {
@@ -29,10 +41,5 @@ public class LoginLog {
         this.userAgent = userAgent;
         this.clientIP = clientIP;
         this.createdAt = createdAt;
-    }
-
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = LocalDateTime.now();
     }
 }

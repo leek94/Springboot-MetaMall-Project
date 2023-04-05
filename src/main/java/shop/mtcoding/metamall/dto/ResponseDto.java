@@ -16,14 +16,14 @@ public class ResponseDto<T> {
     }
 
     public ResponseDto<?> data(T data){
-        this.data = data;
+        this.data = data; // 응답할 데이터 바디
         return this;
     }
 
-    public ResponseDto<?> fail(HttpStatus httpStatus, String errorTitle, T errorDetail){
+    public ResponseDto<?> fail(HttpStatus httpStatus, String msg, T data){
         this.status = httpStatus.value();
-        this.msg = errorTitle;
-        this.data = errorDetail;
+        this.msg = msg; // 에러 제목
+        this.data = data; // 에러 내용
         return this;
     }
 }

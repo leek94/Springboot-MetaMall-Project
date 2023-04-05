@@ -1,4 +1,6 @@
 package shop.mtcoding.metamall.model.orderproduct;
 
-public interface OrderProductRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderProductRepository extends JpaRepository<OrderProduct, Long> {
 }
