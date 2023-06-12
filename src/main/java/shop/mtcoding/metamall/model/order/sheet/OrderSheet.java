@@ -27,6 +27,7 @@ public class OrderSheet { // 주문서
     private User user; // 주문자
 
     //checkpoint -> 무한 참조
+    @JsonIgnoreProperties({"oredeSheet"})   // 이렇게 걸면 OrderProduct 내부의 orderSheet는 JSON으로 변경 하지마
     @OneToMany(mappedBy = "orderSheet", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderProduct> orderProductList = new ArrayList<>(); // 총 주문 상품 리스트
 

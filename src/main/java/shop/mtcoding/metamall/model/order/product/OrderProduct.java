@@ -21,7 +21,8 @@ public class OrderProduct { // 주문 상품
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // checkpoint -> 무한 참조
+    // checkpoint -> 무한
+    @JsonIgnoreProperties({"seller"})
     @ManyToOne
     private Product product;
     @Column(nullable = false)

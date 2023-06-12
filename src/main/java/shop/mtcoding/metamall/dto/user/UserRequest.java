@@ -9,6 +9,13 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class UserRequest {
+
+    @Getter@Setter
+    public static class RoleUpdateDTO{
+        @Pattern(regexp ="USER|ADMIN|SELLER")
+        @NotEmpty
+        private String role;
+    }
     @Getter @Setter
     public static class LoginDTO {
         @NotEmpty
